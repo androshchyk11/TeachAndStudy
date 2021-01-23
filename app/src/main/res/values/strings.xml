@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">T&amp;S</string>
+
+    <string name="wrong_creds">Wrong credentials.</string>
+
+    <string name="connection_error">Connection error</string>
+    <string name="request_error">Request error</string>
+    <string name="ok">OK</string>
+</resources>

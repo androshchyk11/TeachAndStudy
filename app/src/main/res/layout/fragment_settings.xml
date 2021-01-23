@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/pushGroup"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            app:cardElevation="0dp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="Push notifications"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/language"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:cardElevation="0dp"
+            app:layout_constraintTop_toBottomOf="@id/pushGroup">
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:background="?selectableItemBackground"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="Choose language"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/rateApp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:cardElevation="0dp"
+            app:layout_constraintTop_toBottomOf="@id/language">
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:background="?selectableItemBackground"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="rate app"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/feedback"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:cardElevation="0dp"
+            app:layout_constraintTop_toBottomOf="@id/rateApp">
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:background="?selectableItemBackground"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="feedback"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/privacyPolicy"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:cardElevation="0dp"
+            app:layout_constraintTop_toBottomOf="@id/feedback">
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:background="?selectableItemBackground"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="privacy policy"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/aboutUs"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="0dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/privacyPolicy">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:background="?selectableItemBackground"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="about us"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
