@@ -9,16 +9,24 @@ import androidx.navigation.fragment.findNavController
 import com.example.ts.R
 import com.example.ts.databinding.FragmentAuthBinding
 import com.example.ts.databinding.FragmentLoginBinding
+import com.example.ts.model.entities.TestEntity
 import com.example.ts.utils.onThrottleClick
 import com.example.ts.utils.showToast
+import com.example.ts.view.adapters.SlideImageAdapter
+import com.example.ts.view.adapters.pager.OnBoardingAdapter
 import com.example.ts.view.fragments.abstraction.BaseFragment
+import com.example.ts.view.fragments.auth.onBoarding.OnBoardingFragment
+import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.scopes.FragmentScoped
 import kotlinx.android.synthetic.main.fragment_auth.*
+import javax.inject.Inject
 
 @FragmentScoped
 class AuthFragment : BaseFragment() {
 
     private lateinit var binding: FragmentAuthBinding
+
+    private var onBoardingAdapter: OnBoardingAdapter? = null
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,13 +37,44 @@ class AuthFragment : BaseFragment() {
         return binding.root
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //getCurrentUserLocation()
+        setupViewPager()
     }
 
+    private fun setupViewPager() {
+        onBoardingAdapter =
+            activity?.supportFragmentManager?.let {
+                OnBoardingAdapter(
+                    fragmentManager = it,
+                    lifecycle = lifecycle,
+                    onBoardingContentList = arrayListOf(
+                        OnBoardingFragment.getInstance(
+                            "first",
+                            "first",
+                            R.drawable.ic_launcher_foreground,
+                            0
+                        ),
+                        OnBoardingFragment.getInstance(
+                            "second",
+                            "second",
+                            R.drawable.ic_launcher_background,
+                            1
+                        ),
+                        OnBoardingFragment.getInstance(
+                            "third",
+                            "third",
+                            R.drawable.ic_launcher_foreground,
+                            2
+                        )
+                    )
+                )
+            }
 
+        binding.viewPager.adapter = onBoardingAdapter
+    }
 
 
     override fun setupClicks() {

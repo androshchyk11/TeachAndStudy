@@ -6,4 +6,7 @@
     <string name="connection_error">Connection error</string>
     <string name="request_error">Request error</string>
     <string name="ok">OK</string>
+    <string name="login_textview">Login</string>
+    <string name="sign_up_textview">Sign up</string>
+    <string name="skip_textview">SKIP</string>
 </resources>

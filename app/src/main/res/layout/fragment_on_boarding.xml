@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <variable
+            name="firstTxt"
+            type="String" />
+        <variable
+            name="secondTxt"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backGroundGrey">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/unboardingImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="46dp"
+            tools:src="@drawable/ic_launcher_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/onBoardingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:fontFamily="@font/gilroy_regular"
+            tools:text="ONBOARDING CONTENT TEXT"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/unboardingImage" />
+
+        <TextView
+            android:id="@+id/secondaryText"
+            android:layout_width="214dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            tools:text="Lorem ipsum dolor sit
+amet, consectetur
+adipiscing elit. "
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/onBoardingText" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/firstRound"
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:layout_marginTop="35dp"
+            android:src="@drawable/round_blue"
+            android:background="@drawable/round_blue"
+            app:layout_constraintEnd_toStartOf="@id/secondRound"
+            app:layout_constraintStart_toStartOf="@id/unboardingImage"
+            app:layout_constraintTop_toBottomOf="@+id/secondaryText" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/secondRound"
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:layout_marginTop="35dp"
+            android:src="@drawable/round_grey"
+            android:background="@drawable/round_grey"
+            app:layout_constraintEnd_toStartOf="@id/thirdRound"
+            app:layout_constraintStart_toEndOf="@id/firstRound"
+            app:layout_constraintTop_toBottomOf="@+id/secondaryText" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/thirdRound"
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/round_grey"
+            android:src="@drawable/round_grey"
+            app:layout_constraintEnd_toEndOf="@id/unboardingImage"
+            app:layout_constraintStart_toEndOf="@id/secondRound"
+            app:layout_constraintTop_toBottomOf="@+id/secondaryText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -8,7 +8,10 @@ import androidx.databinding.DataBindingUtil
 import com.example.ts.R
 import com.example.ts.databinding.FragmentSignUpBinding
 import com.example.ts.view.fragments.abstraction.BaseFragment
+import dagger.hilt.android.scopes.FragmentScoped
 
+
+@FragmentScoped
 class SignUpFragment : BaseFragment() {
 
     private lateinit var binding: FragmentSignUpBinding

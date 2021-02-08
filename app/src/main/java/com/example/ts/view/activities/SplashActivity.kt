@@ -31,11 +31,11 @@ class SplashActivity : BaseActivity() {
             .doOnComplete {
                 if (!this@SplashActivity.isFinishing) {
                     finish()
-//                    if (sharedPreferencesManager.userAccessToken.isNullOrEmpty()) {
-//                        startActivity(Intent(this@SplashActivity, AuthActivity::class.java))
-//                    } else {
+                    if (sharedPreferencesManager.userAccessToken.isNullOrEmpty()) {
+                        startActivity(Intent(this@SplashActivity, AuthActivity::class.java))
+                    } else {
                         startActivity(Intent(this@SplashActivity, MainActivity::class.java))
-//                    }
+                    }
                 }
             }
             .subscribe()
