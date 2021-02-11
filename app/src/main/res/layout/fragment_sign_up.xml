@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -7,8 +8,41 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:background="@color/backGroundGrey"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/backGroundGrey">
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/userButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:background="@drawable/left_rounded_black_bg"
+            android:minHeight="10dp"
+            android:text="User"
+            android:textAllCaps="false"
+            android:textColor="@color/buttonBlue"
+            android:textSize="20sp"
+            app:backgroundTint="@color/blackButtonBg"
+            app:cornerRadius="0dp"
+            app:layout_constraintEnd_toStartOf="@id/companyButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/companyButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/right_rounded_grey_bg"
+            android:minHeight="10dp"
+            android:text="Company"
+            android:textAllCaps="false"
+            android:textColor="@color/blackButtonBg"
+            android:textSize="20sp"
+            app:backgroundTint="@color/greyText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/userButton"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

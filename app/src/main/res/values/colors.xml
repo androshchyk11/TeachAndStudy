@@ -11,4 +11,5 @@
     <color name="backGroundGrey">#3F3F3F</color>
     <color name="greyText">#828282</color>
     <color name="buttonBlue">#0DAEF2</color>
+    <color name="blackButtonBg">#202020</color>
 </resources>

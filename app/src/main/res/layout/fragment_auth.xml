@@ -17,12 +17,26 @@
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginBottom="90dp"
             android:minHeight="100dp"
+            app:layout_constraintBottom_toTopOf="@+id/buttonsPlaceHolder"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/buttonsPlaceHolder" />
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+            android:id="@+id/dotsIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:dotsColor="@color/buttonBlue"
+            app:dotsSize="10dp"
+            app:dotsSpacing="4dp"
+            app:progressMode="true"
+            app:dotsWidthFactor="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewPager"
+            app:selectedDotColor="@color/buttonBlue" />
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/buttonsPlaceHolder"
@@ -34,7 +48,6 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/black">
@@ -55,9 +68,9 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
-                        android:background="@color/buttonBlue"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:background="@color/buttonBlue"
                         android:fontFamily="@font/gilroy_regular"
                         android:gravity="center"
                         android:text="@string/login_textview"
@@ -85,9 +98,9 @@
                         android:background="@drawable/black_background_blue_border">
 
                         <TextView
-                            android:background="@drawable/black_background_blue_border"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:background="@drawable/black_background_blue_border"
                             android:fontFamily="@font/gilroy_regular"
                             android:gravity="center"
                             android:text="@string/sign_up_textview"

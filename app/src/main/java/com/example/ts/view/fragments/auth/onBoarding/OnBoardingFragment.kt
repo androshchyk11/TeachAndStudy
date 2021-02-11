@@ -26,15 +26,13 @@ class OnBoardingFragment : BaseFragment() {
         fun getInstance(
             firstText: String,
             secondText: String,
-            image: Int,
-            position: Int
+            image: Int
         ): OnBoardingFragment {
             val fragment = OnBoardingFragment()
 
             fragment.firstText = firstText
             fragment.secondText = secondText
             fragment.imageId = image
-            fragment.position = position
 
             return fragment
         }
@@ -43,7 +41,7 @@ class OnBoardingFragment : BaseFragment() {
     private var firstText: String? = null
     private var secondText: String? = null
     private var imageId: Int? = null
-    private var position: Int? = null
+
 
     private lateinit var binding: FragmentOnBoardingBinding
 
@@ -65,32 +63,6 @@ class OnBoardingFragment : BaseFragment() {
 
     private fun setupInfo() {
         with(binding) {
-            when (position) {
-                0 -> {
-                    firstRound.background =
-                        ContextCompat.getDrawable(requireContext(), R.drawable.round_blue)
-                    secondRound.background =
-                        ContextCompat.getDrawable(requireContext(), R.drawable.round_grey)
-                    thirdRound.background =
-                        ContextCompat.getDrawable(requireContext(), R.drawable.round_grey)
-                }
-                1 -> {
-                    firstRound.background =
-                        ContextCompat.getDrawable(requireContext(), R.drawable.round_grey)
-                    secondRound.background =
-                        ContextCompat.getDrawable(requireContext(), R.drawable.round_blue)
-                    thirdRound.background =
-                        ContextCompat.getDrawable(requireContext(), R.drawable.round_grey)
-                }
-                else -> {
-                    firstRound.background =
-                        ContextCompat.getDrawable(requireContext(), R.drawable.round_grey)
-                    secondRound.background =
-                        ContextCompat.getDrawable(requireContext(), R.drawable.round_grey)
-                    thirdRound.background =
-                        ContextCompat.getDrawable(requireContext(), R.drawable.round_blue)
-                }
-            }
 
             onBoardingText.text = firstText
             secondaryText.text = secondText

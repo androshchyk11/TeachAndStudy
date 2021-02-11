@@ -19,11 +19,12 @@
         android:layout_height="match_parent"
         android:background="@color/backGroundGrey">
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:id="@+id/unboardingImage"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="46dp"
+            android:layout_width="301dp"
+            android:layout_height="231dp"
+            android:scaleType="fitXY"
+            android:layout_marginTop="76dp"
             tools:src="@drawable/ic_launcher_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -59,38 +60,6 @@ adipiscing elit. "
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/onBoardingText" />
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/firstRound"
-            android:layout_width="13dp"
-            android:layout_height="13dp"
-            android:layout_marginTop="35dp"
-            android:src="@drawable/round_blue"
-            android:background="@drawable/round_blue"
-            app:layout_constraintEnd_toStartOf="@id/secondRound"
-            app:layout_constraintStart_toStartOf="@id/unboardingImage"
-            app:layout_constraintTop_toBottomOf="@+id/secondaryText" />
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/secondRound"
-            android:layout_width="13dp"
-            android:layout_height="13dp"
-            android:layout_marginTop="35dp"
-            android:src="@drawable/round_grey"
-            android:background="@drawable/round_grey"
-            app:layout_constraintEnd_toStartOf="@id/thirdRound"
-            app:layout_constraintStart_toEndOf="@id/firstRound"
-            app:layout_constraintTop_toBottomOf="@+id/secondaryText" />
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/thirdRound"
-            android:layout_width="13dp"
-            android:layout_height="13dp"
-            android:layout_marginTop="35dp"
-            android:background="@drawable/round_grey"
-            android:src="@drawable/round_grey"
-            app:layout_constraintEnd_toEndOf="@id/unboardingImage"
-            app:layout_constraintStart_toEndOf="@id/secondRound"
-            app:layout_constraintTop_toBottomOf="@+id/secondaryText" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

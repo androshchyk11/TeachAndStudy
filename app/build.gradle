@@ -80,6 +80,9 @@ dependencies {
     kapt 'com.android.databinding:compiler:3.1.4'
     implementation 'com.google.android.material:material:1.2.1'
 
+
+    // sigment button
+    implementation 'com.github.ceryle:SegmentedButton:v2.0.2'
     // dependency injection
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"

@@ -54,26 +54,26 @@ class AuthFragment : BaseFragment() {
                         OnBoardingFragment.getInstance(
                             "first",
                             "first",
-                            R.drawable.ic_launcher_foreground,
-                            0
+                            R.drawable.ic_onboarding_first
                         ),
                         OnBoardingFragment.getInstance(
                             "second",
                             "second",
-                            R.drawable.ic_launcher_background,
-                            1
+                            R.drawable.ic_launcher_background
                         ),
                         OnBoardingFragment.getInstance(
                             "third",
                             "third",
-                            R.drawable.ic_launcher_foreground,
-                            2
+                            R.drawable.ic_onboarding_third
                         )
                     )
                 )
             }
 
-        binding.viewPager.adapter = onBoardingAdapter
+        with(binding) {
+            viewPager.adapter = onBoardingAdapter
+            dotsIndicator.setViewPager2(viewPager)
+        }
     }
 
 
@@ -83,7 +83,7 @@ class AuthFragment : BaseFragment() {
                 context?.showToast("in development")
             }
             authButton.onThrottleClick {
-
+                findNavController().navigate(R.id.action_authFragment_to_signUpFragment)
             }
             loginButton.onThrottleClick {
                 findNavController().navigate(R.id.action_authFragment_to_loginFragment)
