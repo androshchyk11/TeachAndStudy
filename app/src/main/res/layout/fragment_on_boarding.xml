@@ -21,10 +21,11 @@
 
         <ImageView
             android:id="@+id/unboardingImage"
-            android:layout_width="301dp"
-            android:layout_height="231dp"
-            android:scaleType="fitXY"
+            android:layout_width="210dp"
+            android:layout_height="200dp"
+            android:scaleType="centerInside"
             android:layout_marginTop="76dp"
+            android:adjustViewBounds="true"
             tools:src="@drawable/ic_launcher_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

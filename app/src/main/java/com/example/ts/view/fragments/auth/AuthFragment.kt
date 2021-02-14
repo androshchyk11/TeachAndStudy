@@ -44,6 +44,7 @@ class AuthFragment : BaseFragment() {
         setupViewPager()
     }
 
+    //todo edit the text in different languages
     private fun setupViewPager() {
         onBoardingAdapter =
             activity?.supportFragmentManager?.let {
@@ -52,18 +53,18 @@ class AuthFragment : BaseFragment() {
                     lifecycle = lifecycle,
                     onBoardingContentList = arrayListOf(
                         OnBoardingFragment.getInstance(
-                            "first",
-                            "first",
+                            "Study",
+                            "Our app is a studying platform for teachers and students\n",
                             R.drawable.ic_onboarding_first
                         ),
                         OnBoardingFragment.getInstance(
-                            "second",
-                            "second",
-                            R.drawable.ic_launcher_background
+                            "Chat",
+                            "Chat and attend lessons on the go, anytime, anywhere",
+                            R.drawable.ic_onboarding_second
                         ),
                         OnBoardingFragment.getInstance(
-                            "third",
-                            "third",
+                            "Test",
+                            "Work with your tests in the most comfortable way",
                             R.drawable.ic_onboarding_third
                         )
                     )

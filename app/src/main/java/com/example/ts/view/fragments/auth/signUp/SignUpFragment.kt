@@ -1,4 +1,4 @@
-package com.example.ts.view.fragments.auth
+package com.example.ts.view.fragments.auth.signUp
 
 import android.os.Bundle
 import android.util.Log
@@ -11,7 +11,10 @@ import androidx.databinding.DataBindingUtil
 import co.ceryle.segmentedbutton.SegmentedButtonGroup
 import com.example.ts.R
 import com.example.ts.databinding.FragmentSignUpBinding
+import com.example.ts.view.adapters.pager.OnBoardingAdapter
+import com.example.ts.view.adapters.pager.SignUpPagerAdapter
 import com.example.ts.view.fragments.abstraction.BaseFragment
+import com.example.ts.view.fragments.auth.onBoarding.OnBoardingFragment
 import dagger.hilt.android.scopes.FragmentScoped
 
 
@@ -21,6 +24,7 @@ class SignUpFragment : BaseFragment() {
     private val TYPE_USER = "TYPE_USER"
     private val TYPE_COMPANY = "TYPE_COMPANY"
     private lateinit var binding: FragmentSignUpBinding
+    private var signUpPagerAdapter: SignUpPagerAdapter? = null
 
     private var userType = TYPE_USER
     override fun onCreateView(
@@ -36,9 +40,27 @@ class SignUpFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //getCurrentUserLocation()
+        setupViewPager()
     }
 
+
+    private fun setupViewPager() {
+        signUpPagerAdapter =
+            activity?.supportFragmentManager?.let {
+                SignUpPagerAdapter(
+                    fragmentManager = it,
+                    lifecycle = lifecycle,
+                    listOfFragments = arrayListOf(
+                        UserSignUpFragment(), CompanySignUpFragment()
+                    )
+                )
+            }
+
+        with(binding) {
+            viewPager.adapter = signUpPagerAdapter
+            viewPager.isUserInputEnabled = false
+        }
+    }
 
     private fun areFieldsValid(): Boolean {
         return true
@@ -63,7 +85,10 @@ class SignUpFragment : BaseFragment() {
                     companyButton.backgroundTintList = ContextCompat.getColorStateList(requireContext(), R.color.greyText);
                     companyButton.setTextColor(ContextCompat.getColor(requireContext(), R.color.blackButtonBg))
 
+                    binding.viewPager.currentItem = 0
                 }
+
+
             }
             companyButton.setOnClickListener {
                 if (userType == TYPE_COMPANY) {
@@ -81,17 +106,10 @@ class SignUpFragment : BaseFragment() {
                     userButton.background = ContextCompat.getDrawable(requireContext(), R.drawable.left_rounded_grey_bg)
                     userButton.backgroundTintList = ContextCompat.getColorStateList(requireContext(), R.color.greyText);
                     userButton.setTextColor(ContextCompat.getColor(requireContext(), R.color.blackButtonBg))
+
+                    binding.viewPager.currentItem = 1
                 }
             }
-        }
-
-    }
-
-    private fun updateButtons(position: Int) {
-        if (position == 0) {
-            binding.userButton.text = "1234"
-        } else {
-            binding.userButton.text = "12341234"
         }
 
     }

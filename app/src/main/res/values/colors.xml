@@ -12,4 +12,5 @@
     <color name="greyText">#828282</color>
     <color name="buttonBlue">#0DAEF2</color>
     <color name="blackButtonBg">#202020</color>
+    <color name="hintGrey">#90939B</color>
 </resources>

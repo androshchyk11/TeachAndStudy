@@ -12,11 +12,26 @@
         android:background="@color/backGroundGrey">
 
 
+        <TextView
+            android:id="@+id/questionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="58dp"
+            android:fontFamily="@font/gilroy_regular"
+            android:text="Who are you?"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/userButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/left_rounded_black_bg"
             android:minHeight="10dp"
             android:text="User"
@@ -27,22 +42,35 @@
             app:cornerRadius="0dp"
             app:layout_constraintEnd_toStartOf="@id/companyButton"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/questionTextView" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/companyButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:background="@drawable/right_rounded_grey_bg"
             android:minHeight="10dp"
             android:text="Company"
             android:textAllCaps="false"
+            android:layout_marginEnd="18dp"
             android:textColor="@color/blackButtonBg"
             android:textSize="20sp"
             app:backgroundTint="@color/greyText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/userButton"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/questionTextView" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:minHeight="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/companyButton"/>
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
