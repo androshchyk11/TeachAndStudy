@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.ts.view.fragments.auth.AuthViewModel" />
+            type="com.example.ts.view.fragments.auth.login.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

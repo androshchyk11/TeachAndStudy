@@ -1,4 +1,4 @@
-package com.example.ts.view.fragments.auth
+package com.example.ts.view.fragments.auth.signUp.companySignUp
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,27 +8,29 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import com.example.ts.R
+import com.example.ts.databinding.FragmentCompanySignUpBinding
 import com.example.ts.databinding.FragmentLoginBinding
+import com.example.ts.utils.glide.GlideApp
 import com.example.ts.utils.isValidEmail
-import com.example.ts.utils.isValidPass
 import com.example.ts.utils.onThrottleClick
 import com.example.ts.utils.showToast
 import com.example.ts.view.activities.MainActivity
 import com.example.ts.view.fragments.abstraction.BaseFragment
-import dagger.hilt.android.scopes.FragmentScoped
+import com.example.ts.view.fragments.auth.signUp.userSignUp.UserSignUpViewModel
 
-@FragmentScoped
-class LoginFragment : BaseFragment() {
+class CompanySignUpFragment : BaseFragment() {
 
 
-    private val viewModel: AuthViewModel by viewModels()
-    private lateinit var binding: FragmentLoginBinding
+    private lateinit var binding: FragmentCompanySignUpBinding
+
+    private val viewModel: CompanySignUpViewModel by viewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_company_sign_up, container, false)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
         return binding.root
@@ -37,33 +39,34 @@ class LoginFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        GlideApp
+            .with(requireContext())
+            .load(R.drawable.ic_company_sign_up)
+            .into(binding.unboardingImage)
+
     }
 
+    //todo edit all text
     private fun areFieldsValid(): Boolean {
         var isValid = true
-        if (viewModel.email.value.isNullOrEmpty()) {
-            context?.showToast("this field is empty")
-            isValid = false
-        }
-        if (!viewModel.email.value.isValidEmail()) {
+        if (viewModel.companyEmail.value.isNullOrEmpty()) {
             context?.showToast("the mail is empty")
             isValid = false
         }
-        if (!viewModel.password.value.isValidPass()) {
-            context?.showToast("the password is not valid")
+        if (!viewModel.companyEmail.value.isValidEmail()) {
+            context?.showToast("the mail is not valid")
             isValid = false
         }
-        if (viewModel.password.value.isNullOrEmpty()) {
-            context?.showToast("the password is empty")
+        if (viewModel.companyName.value.isNullOrEmpty()) {
+            context?.showToast("Input company name")
             isValid = false
         }
         return isValid
     }
 
-
     override fun setupClicks() {
         with(binding) {
-            loginButton.onThrottleClick {
+            nextButton.onThrottleClick {
                 if (areFieldsValid()) {
                     startActivity(Intent(requireContext(), MainActivity::class.java))
                 }

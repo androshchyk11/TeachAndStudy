@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.example.ts.view.fragments.auth.signUp.companySignUp.CompanySignUpViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,10 +23,10 @@
             android:layout_marginTop="33dp"
             android:adjustViewBounds="true"
             android:scaleType="centerInside"
-            tools:src="@drawable/ic_company_sign_up"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_company_sign_up" />
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/inputInfoPlaceHolder"
@@ -59,9 +63,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
-                    android:textColor="@color/white"
                     android:backgroundTint="@color/white"
                     android:hint="User Name"
+                    android:text="@={viewModel.companyName}"
+                    android:textColor="@color/white"
                     android:textColorHint="@color/hintGrey"
                     app:layout_constraintTop_toBottomOf="@id/nameText" />
 
@@ -87,8 +92,10 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
                     android:backgroundTint="@color/white"
-                    android:textColor="@color/white"
                     android:hint="username@mail.com"
+                    android:inputType="textEmailAddress"
+                    android:text="@={viewModel.companyEmail}"
+                    android:textColor="@color/white"
                     android:textColorHint="@color/hintGrey"
                     app:layout_constraintTop_toBottomOf="@id/mailText" />
 

@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="viewModel"
+            type="com.example.ts.view.fragments.auth.signUp.userSignUp.UserSignUpViewModel" />
 
     </data>
 
@@ -60,6 +63,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
                     android:textColor="@color/white"
+                    android:text="@={viewModel.userName}"
                     android:backgroundTint="@color/white"
                     android:hint="User Name"
                     android:textColorHint="@color/hintGrey"
@@ -87,6 +91,7 @@
                     android:layout_marginEnd="16dp"
                     android:textColor="@color/white"
                     android:backgroundTint="@color/white"
+                    android:text="@={viewModel.userSurname}"
                     android:hint="User Surname"
                     android:textColorHint="@color/hintGrey"
                     app:layout_constraintTop_toBottomOf="@id/surnameText" />
@@ -111,6 +116,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
+                    android:text="@={viewModel.userEmail}"
+                    android:inputType="textEmailAddress"
                     android:backgroundTint="@color/white"
                     android:hint="username@mail.com"
                     android:textColor="@color/white"

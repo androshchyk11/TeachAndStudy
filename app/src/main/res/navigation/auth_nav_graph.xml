@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/loginFragment"
         tools:layout="@layout/fragment_login"
-        android:name="com.example.ts.view.fragments.auth.LoginFragment"
+        android:name="com.example.ts.view.fragments.auth.login.LoginFragment"
         android:label="LoginFragment"
         app:enterAnim="@anim/fragment_open_enter"
         app:exitAnim="@anim/fragment_open_exit"

@@ -1,20 +1,17 @@
 package com.example.ts.view.fragments.auth.signUp
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
-import co.ceryle.segmentedbutton.SegmentedButtonGroup
 import com.example.ts.R
 import com.example.ts.databinding.FragmentSignUpBinding
-import com.example.ts.view.adapters.pager.OnBoardingAdapter
 import com.example.ts.view.adapters.pager.SignUpPagerAdapter
 import com.example.ts.view.fragments.abstraction.BaseFragment
-import com.example.ts.view.fragments.auth.onBoarding.OnBoardingFragment
+import com.example.ts.view.fragments.auth.signUp.companySignUp.CompanySignUpFragment
+import com.example.ts.view.fragments.auth.signUp.userSignUp.UserSignUpFragment
 import dagger.hilt.android.scopes.FragmentScoped
 
 
@@ -60,10 +57,6 @@ class SignUpFragment : BaseFragment() {
             viewPager.adapter = signUpPagerAdapter
             viewPager.isUserInputEnabled = false
         }
-    }
-
-    private fun areFieldsValid(): Boolean {
-        return true
     }
 
 
