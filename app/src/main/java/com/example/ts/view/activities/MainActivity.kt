@@ -60,6 +60,7 @@ class MainActivity : BaseActivity(), NavController.OnDestinationChangedListener,
 //            R.id.menuFragment -> mainBottomNav.selectedItemId = R.id.item_menu
         }
         binding.mainBottomNav.setOnNavigationItemSelectedListener(this)
+        binding.mainBottomNav.itemIconTintList = null;
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

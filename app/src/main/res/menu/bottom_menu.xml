@@ -3,24 +3,29 @@
     <item
         android:id="@+id/item_home"
         android:checked="true"
-        android:title="home" />
+        android:icon="@drawable/home_selector"
+        android:title="Home" />
 
     <item
         android:id="@+id/item_calendar"
         android:checked="false"
-        android:title="calendar" />
+        android:icon="@drawable/calendar_selector"
+        android:title="Calendar" />
 
     <item
         android:id="@+id/item_profile"
         android:checked="false"
-        android:title="profile" />
+        android:icon="@drawable/profile_selector"
+        android:title="Profile" />
     <item
         android:id="@+id/item_chat"
         android:checked="false"
-        android:title="chat" />
+        android:icon="@drawable/chat_selector"
+        android:title="Chat" />
 
     <item
         android:id="@+id/item_settings"
         android:checked="false"
-        android:title="settings" />
+        android:icon="@drawable/settings_selector"
+        android:title="Settings" />
 </menu>

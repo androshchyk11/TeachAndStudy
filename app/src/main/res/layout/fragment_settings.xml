@@ -8,7 +8,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:background="@color/white"
+        android:background="@color/backGroundGrey"
         android:layout_height="match_parent">
 
         <com.google.android.material.card.MaterialCardView
@@ -17,7 +17,7 @@
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
             app:cardElevation="0dp"
-            android:background="@color/white"
+            app:cardBackgroundColor="@color/backGroundGrey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -28,7 +28,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="16dp"
                 android:text="Push notifications"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.SwitchCompat
@@ -42,6 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/backGroundGrey"
             app:layout_constraintTop_toBottomOf="@id/pushGroup">
 
             <TextView
@@ -53,7 +54,7 @@
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:text="Choose language"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textStyle="bold" />
         </com.google.android.material.card.MaterialCardView>
 
@@ -62,6 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/backGroundGrey"
             app:layout_constraintTop_toBottomOf="@id/language">
 
             <TextView
@@ -73,7 +75,7 @@
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:text="rate app"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textStyle="bold" />
         </com.google.android.material.card.MaterialCardView>
 
@@ -82,6 +84,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/backGroundGrey"
             app:layout_constraintTop_toBottomOf="@id/rateApp">
 
             <TextView
@@ -93,7 +96,7 @@
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:text="feedback"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textStyle="bold" />
         </com.google.android.material.card.MaterialCardView>
 
@@ -102,6 +105,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/backGroundGrey"
             app:layout_constraintTop_toBottomOf="@id/feedback">
 
             <TextView
@@ -113,7 +117,7 @@
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:text="privacy policy"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textStyle="bold" />
         </com.google.android.material.card.MaterialCardView>
 
@@ -124,7 +128,7 @@
             app:cardCornerRadius="0dp"
             app:cardElevation="0dp"
             app:cardPreventCornerOverlap="false"
-            app:cardBackgroundColor="@color/white"
+            app:cardBackgroundColor="@color/backGroundGrey"
             app:layout_constraintTop_toBottomOf="@id/privacyPolicy">
 
             <TextView
@@ -136,7 +140,7 @@
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:text="about us"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textStyle="bold" />
         </com.google.android.material.card.MaterialCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
