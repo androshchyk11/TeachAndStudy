@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.ts.R
 import com.example.ts.databinding.FragmentCompanySignUpBinding
 import com.example.ts.databinding.FragmentLoginBinding
@@ -20,6 +21,9 @@ import com.example.ts.view.fragments.auth.signUp.userSignUp.UserSignUpViewModel
 
 class CompanySignUpFragment : BaseFragment() {
 
+    companion object{
+        const val COMPANY_REGISTRATION_FLAG = "IsCompany"
+    }
 
     private lateinit var binding: FragmentCompanySignUpBinding
 
@@ -41,7 +45,7 @@ class CompanySignUpFragment : BaseFragment() {
 
         GlideApp
             .with(requireContext())
-            .load(R.drawable.ic_company_sign_up)
+            .load(R.mipmap.ic_company_sign_up)
             .into(binding.unboardingImage)
 
     }
@@ -68,7 +72,10 @@ class CompanySignUpFragment : BaseFragment() {
         with(binding) {
             nextButton.onThrottleClick {
                 if (areFieldsValid()) {
-                    startActivity(Intent(requireContext(), MainActivity::class.java))
+                    val bundle = Bundle()
+                    bundle.putBoolean(COMPANY_REGISTRATION_FLAG, true)
+                    findNavController().navigate(R.id.action_signUpFragment_to_verificationFragment, bundle)
+//                    startActivity(Intent(requireContext(), MainActivity::class.java))
                 }
             }
         }

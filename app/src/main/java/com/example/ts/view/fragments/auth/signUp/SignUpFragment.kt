@@ -62,6 +62,9 @@ class SignUpFragment : BaseFragment() {
 
     override fun setupClicks() {
         with(binding) {
+            backButton.setOnClickListener {
+                activity?.onBackPressed()
+            }
             userButton.setOnClickListener {
                 if (userType == TYPE_USER) {
                     return@setOnClickListener
@@ -104,6 +107,5 @@ class SignUpFragment : BaseFragment() {
                 }
             }
         }
-
     }
 }

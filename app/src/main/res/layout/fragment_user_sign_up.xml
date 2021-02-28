@@ -4,155 +4,165 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.example.ts.view.fragments.auth.signUp.userSignUp.UserSignUpViewModel" />
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/backGroundGrey">
+        android:fillViewport="true">
 
-        <ImageView
-            android:id="@+id/unboardingImage"
-            android:layout_width="210dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="33dp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_user_sign_up"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/inputInfoPlaceHolder"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/black"
-            app:cardCornerRadius="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            android:layout_height="match_parent"
+            android:background="@color/backGroundGrey">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/unboardingImage"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/black">
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="50dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@mipmap/ic_user_sign_up"
+                app:layout_constraintBottom_toTopOf="@+id/inputInfoPlaceHolder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/nameText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="19dp"
-                    android:layout_marginTop="30dp"
-                    android:fontFamily="@font/gilroy_regular"
-                    android:text="Name"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/inputInfoPlaceHolder"
+                android:layout_width="match_parent"
 
-                <EditText
-                    android:id="@+id/userNameInput"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@color/black"
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:textColor="@color/white"
-                    android:text="@={viewModel.userName}"
-                    android:backgroundTint="@color/white"
-                    android:hint="User Name"
-                    android:textColorHint="@color/hintGrey"
-                    app:layout_constraintTop_toBottomOf="@id/nameText" />
-
-                <TextView
-                    android:id="@+id/surnameText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="19dp"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/gilroy_regular"
-                    android:text="Surname"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/userNameInput" />
-
-                <EditText
-                    android:id="@+id/userSurnameInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:textColor="@color/white"
-                    android:backgroundTint="@color/white"
-                    android:text="@={viewModel.userSurname}"
-                    android:hint="User Surname"
-                    android:textColorHint="@color/hintGrey"
-                    app:layout_constraintTop_toBottomOf="@id/surnameText" />
-
-                <TextView
-                    android:id="@+id/mailText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="19dp"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/gilroy_regular"
-                    android:text="Email"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/userSurnameInput" />
-
-                <EditText
-                    android:id="@+id/userEmailInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:text="@={viewModel.userEmail}"
-                    android:inputType="textEmailAddress"
-                    android:backgroundTint="@color/white"
-                    android:hint="username@mail.com"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/hintGrey"
-                    app:layout_constraintTop_toBottomOf="@id/mailText" />
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/nextButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="33dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="18dp"
-                    app:cardBackgroundColor="@color/buttonBlue"
-                    app:cardCornerRadius="54dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/userEmailInput">
+                    android:background="@color/black">
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/buttonBlue"
+                        android:id="@+id/nameText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="19dp"
+                        android:layout_marginTop="16dp"
                         android:fontFamily="@font/gilroy_regular"
-                        android:gravity="center"
-                        android:text="Next"
+                        android:text="Name"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-                </com.google.android.material.card.MaterialCardView>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
+                    <EditText
+                        android:id="@+id/userNameInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:backgroundTint="@color/white"
+                        android:hint="User Name"
+                        android:text="@={viewModel.userName}"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/hintGrey"
+                        app:layout_constraintTop_toBottomOf="@id/nameText" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:id="@+id/surnameText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="19dp"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:text="Surname"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/userNameInput" />
+
+                    <EditText
+                        android:id="@+id/userSurnameInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:backgroundTint="@color/white"
+                        android:hint="User Surname"
+                        android:text="@={viewModel.userSurname}"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/hintGrey"
+                        app:layout_constraintTop_toBottomOf="@id/surnameText" />
+
+                    <TextView
+                        android:id="@+id/mailText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="19dp"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:text="Email"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/userSurnameInput" />
+
+                    <EditText
+                        android:id="@+id/userEmailInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:backgroundTint="@color/white"
+                        android:hint="username@mail.com"
+                        android:inputType="textEmailAddress"
+                        android:text="@={viewModel.userEmail}"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/hintGrey"
+                        app:layout_constraintTop_toBottomOf="@id/mailText" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/nextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="18dp"
+                        app:cardBackgroundColor="@color/buttonBlue"
+                        app:cardCornerRadius="30dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/userEmailInput">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/buttonBlue"
+                            android:fontFamily="@font/gilroy_regular"
+                            android:gravity="center"
+                            android:text="Next"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 </layout>

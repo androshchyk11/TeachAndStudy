@@ -24,7 +24,7 @@
             android:layout_width="210dp"
             android:layout_height="200dp"
             android:scaleType="centerInside"
-            android:layout_marginTop="76dp"
+            android:layout_marginTop="36dp"
             android:adjustViewBounds="true"
             tools:src="@drawable/ic_launcher_background"
             app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +36,7 @@
             android:id="@+id/onBoardingText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="34dp"
+            android:layout_marginTop="14dp"
             android:fontFamily="@font/gilroy_regular"
             tools:text="ONBOARDING CONTENT TEXT"
             android:textColor="@color/white"
@@ -50,16 +50,19 @@
             android:id="@+id/secondaryText"
             android:layout_width="214dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="12dp"
             android:gravity="center"
-            tools:text="Lorem ipsum dolor sit
-amet, consectetur
-adipiscing elit. "
             android:textColor="@color/white"
             android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.512"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/onBoardingText" />
+            app:layout_constraintTop_toBottomOf="@id/onBoardingText"
+            app:layout_constraintVertical_bias="0.055"
+            tools:text="Lorem ipsum dolor sit
+amet, consectetur
+adipiscing elit. " />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

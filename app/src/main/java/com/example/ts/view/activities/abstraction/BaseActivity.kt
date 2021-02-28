@@ -34,4 +34,7 @@ abstract class BaseActivity: AppCompatActivity() {
         compositeDisposable.dispose()
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+    }
 }

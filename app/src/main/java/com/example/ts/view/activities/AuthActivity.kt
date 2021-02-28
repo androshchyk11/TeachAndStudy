@@ -30,4 +30,5 @@ class AuthActivity : BaseActivity() {
         navController = Navigation.findNavController(this, R.id.auth_host_fragment)
     }
 
+
 }

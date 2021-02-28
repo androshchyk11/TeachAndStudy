@@ -7,15 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.ts.R
 import com.example.ts.databinding.FragmentUserSignUpBinding
 import com.example.ts.utils.isValidEmail
 import com.example.ts.utils.isValidPass
 import com.example.ts.utils.onThrottleClick
 import com.example.ts.utils.showToast
+import com.example.ts.view.activities.AuthActivity
 import com.example.ts.view.activities.MainActivity
 import com.example.ts.view.fragments.abstraction.BaseFragment
 import com.example.ts.view.fragments.auth.login.LoginViewModel
+import com.example.ts.view.fragments.auth.signUp.companySignUp.CompanySignUpFragment
 
 class UserSignUpFragment : BaseFragment() {
 
@@ -68,7 +71,9 @@ class UserSignUpFragment : BaseFragment() {
         with(binding) {
             nextButton.onThrottleClick {
                 if (areFieldsValid()) {
-                    startActivity(Intent(requireContext(), MainActivity::class.java))
+                    val bundle = Bundle()
+                    bundle.putBoolean(CompanySignUpFragment.COMPANY_REGISTRATION_FLAG, false)
+                    findNavController().navigate(R.id.action_signUpFragment_to_verificationFragment, bundle)
                 }
             }
         }

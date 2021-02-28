@@ -13,6 +13,7 @@ import com.example.ts.utils.isValidEmail
 import com.example.ts.utils.isValidPass
 import com.example.ts.utils.onThrottleClick
 import com.example.ts.utils.showToast
+import com.example.ts.view.activities.AuthActivity
 import com.example.ts.view.activities.MainActivity
 import com.example.ts.view.fragments.abstraction.BaseFragment
 import dagger.hilt.android.scopes.FragmentScoped
@@ -65,6 +66,7 @@ class LoginFragment : BaseFragment() {
         with(binding) {
             loginButton.onThrottleClick {
                 if (areFieldsValid()) {
+                    (activity as AuthActivity).finish()
                     startActivity(Intent(requireContext(), MainActivity::class.java))
                 }
             }

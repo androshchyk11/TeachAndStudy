@@ -111,6 +111,10 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxkotlin:2.4.0'
 
 
+
+    //input code view
+    implementation 'com.alimuzaffar.lib:pinentryedittext:1.3.10'
+
     // page indicator
     implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
     // work manager

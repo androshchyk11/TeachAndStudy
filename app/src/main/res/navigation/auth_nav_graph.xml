@@ -7,28 +7,32 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        tools:layout="@layout/fragment_login"
         android:name="com.example.ts.view.fragments.auth.login.LoginFragment"
         android:label="LoginFragment"
         app:enterAnim="@anim/fragment_open_enter"
         app:exitAnim="@anim/fragment_open_exit"
         app:popEnterAnim="@anim/fragment_fade_enter"
-        app:popExitAnim="@anim/fragment_fade_exit"/>
+        app:popExitAnim="@anim/fragment_fade_exit"
+        tools:layout="@layout/fragment_login">
+
+    </fragment>
     <fragment
         android:id="@+id/authFragment"
         android:name="com.example.ts.view.fragments.auth.AuthFragment"
         android:label="AuthFragment"
-        tools:layout="@layout/fragment_auth"
         app:enterAnim="@anim/fragment_open_enter"
         app:exitAnim="@anim/fragment_open_exit"
         app:popEnterAnim="@anim/fragment_fade_enter"
-        app:popExitAnim="@anim/fragment_fade_exit">
+        app:popExitAnim="@anim/fragment_fade_exit"
+        tools:layout="@layout/fragment_auth">
         <action
             android:id="@+id/action_authFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/authFragment" />
         <action
             android:id="@+id/action_authFragment_to_signUpFragment"
-            app:destination="@id/signUpFragment" />
+            app:destination="@id/signUpFragment"
+            app:popUpTo="@id/authFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
@@ -38,5 +42,48 @@
         app:exitAnim="@anim/fragment_open_exit"
         app:popEnterAnim="@anim/fragment_fade_enter"
         app:popExitAnim="@anim/fragment_fade_exit"
-        tools:layout="@layout/fragment_sign_up"/>
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_signUpFragment_to_verificationFragment"
+            app:destination="@id/verificationFragment"
+            app:popUpTo="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/verificationFragment"
+        android:name="com.example.ts.view.fragments.auth.verification.VerificationFragment"
+        android:label="VerificationFragment"
+        app:enterAnim="@anim/fragment_open_enter"
+        app:exitAnim="@anim/fragment_open_exit"
+        app:popEnterAnim="@anim/fragment_fade_enter"
+
+        app:popExitAnim="@anim/fragment_fade_exit"
+        tools:layout="@layout/fragment_verification">
+        <action
+            android:id="@+id/action_verificationFragment_to_createPasswordFragment"
+            app:destination="@id/createPasswordFragment"
+            app:popUpTo="@id/verificationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createPasswordFragment"
+        android:name="com.example.ts.view.fragments.auth.verification.CreatePasswordFragment"
+        android:label="CreatePasswordFragment"
+        app:enterAnim="@anim/fragment_open_enter"
+        app:exitAnim="@anim/fragment_open_exit"
+        app:popEnterAnim="@anim/fragment_fade_enter"
+        app:popExitAnim="@anim/fragment_fade_exit"
+        tools:layout="@layout/fragment_create_password">
+        <action
+            android:id="@+id/action_createPasswordFragment_to_inviteMembersFragment"
+
+            app:destination="@id/inviteMembersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inviteMembersFragment"
+        android:name="com.example.ts.view.fragments.auth.InviteMembersFragment"
+        android:label="InviteMembersFragment"
+        app:enterAnim="@anim/fragment_open_enter"
+        app:exitAnim="@anim/fragment_open_exit"
+        app:popEnterAnim="@anim/fragment_fade_enter"
+        app:popExitAnim="@anim/fragment_fade_exit"
+        tools:layout="@layout/fragment_invite_members" />
 </navigation>

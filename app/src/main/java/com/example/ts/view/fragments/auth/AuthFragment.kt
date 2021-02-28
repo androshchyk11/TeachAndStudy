@@ -1,5 +1,6 @@
 package com.example.ts.view.fragments.auth
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,11 +13,11 @@ import com.example.ts.databinding.FragmentLoginBinding
 import com.example.ts.model.entities.TestEntity
 import com.example.ts.utils.onThrottleClick
 import com.example.ts.utils.showToast
-import com.example.ts.view.adapters.SlideImageAdapter
+import com.example.ts.view.activities.AuthActivity
+import com.example.ts.view.activities.MainActivity
 import com.example.ts.view.adapters.pager.OnBoardingAdapter
 import com.example.ts.view.fragments.abstraction.BaseFragment
 import com.example.ts.view.fragments.auth.onBoarding.OnBoardingFragment
-import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.scopes.FragmentScoped
 import kotlinx.android.synthetic.main.fragment_auth.*
 import javax.inject.Inject
@@ -81,7 +82,8 @@ class AuthFragment : BaseFragment() {
     override fun setupClicks() {
         with(binding) {
             skipButton.onThrottleClick {
-                context?.showToast("in development")
+                (activity as AuthActivity).finish()
+                startActivity(Intent(requireContext(), MainActivity::class.java))
             }
             authButton.onThrottleClick {
                 findNavController().navigate(R.id.action_authFragment_to_signUpFragment)
