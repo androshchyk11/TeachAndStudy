@@ -1,4 +1,4 @@
-package com.example.ts.view.fragments.chat
+package com.example.ts.view.fragments.chat.chatList
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,14 +8,15 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ts.R
 import com.example.ts.databinding.FragmentChatBinding
+import com.example.ts.interfaces.OnFolderClickListener
 import com.example.ts.view.adapters.FoldersAdapter
 import com.example.ts.view.fragments.abstraction.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
-@AndroidEntryPoint
-class ChatFragment : BaseFragment() {
 
+@AndroidEntryPoint
+class ChatListFragment:BaseFragment() {
     private lateinit var binding: FragmentChatBinding
 
     @Inject
@@ -27,7 +28,7 @@ class ChatFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_chat, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_chat_list, container, false)
         binding.lifecycleOwner = this
         return binding.root
     }
@@ -42,6 +43,12 @@ class ChatFragment : BaseFragment() {
     private fun setupFoldersRecyclerView() {
         binding.foldersList.adapter = foldersAdapter
         binding.foldersList.layoutManager = LinearLayoutManager(requireContext())
+
+        foldersAdapter.onFolderClickListener = object: OnFolderClickListener {
+            override fun clickListener(id: String?) {
+
+            }
+        }
     }
 
 

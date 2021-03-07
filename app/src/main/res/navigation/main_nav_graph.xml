@@ -25,7 +25,7 @@
         tools:layout="@layout/fragment_calendar" />
     <fragment
         android:id="@+id/chatFragment"
-        android:name="com.example.ts.view.fragments.chat.ChatFragment"
+        android:name="com.example.ts.view.fragments.chat.chatFolders.ChatFragment"
         android:label="ChatFragment"
         app:enterAnim="@anim/fragment_open_enter"
         app:exitAnim="@anim/fragment_open_exit"
