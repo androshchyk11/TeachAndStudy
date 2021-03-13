@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ts.R
 import com.example.ts.databinding.FragmentChatBinding
@@ -45,10 +46,9 @@ class ChatFragment : BaseFragment() {
         binding.foldersList.layoutManager = LinearLayoutManager(requireContext())
 
         foldersAdapter.onFolderClickListener = object:OnFolderClickListener{
-            override fun clickListener(id: String?) {
-                TODO("Not yet implemented")
+            override fun folderClickListener(id: String?, folderName: String?) {
+                findNavController().navigate(R.id.action_chatFragment_to_chatListFragment)
             }
-
         }
     }
 

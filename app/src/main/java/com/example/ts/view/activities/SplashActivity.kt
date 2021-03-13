@@ -44,9 +44,9 @@ class SplashActivity : BaseActivity() {
                     if (!this@SplashActivity.isFinishing) {
                         finish()
 //                    if (sharedPreferencesManager.userAccessToken.isNullOrEmpty()) {
-                        startActivity(Intent(this@SplashActivity, AuthActivity::class.java))
+//                        startActivity(Intent(this@SplashActivity, AuthActivity::class.java))
 //                    } else {
-//                        startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+                        startActivity(Intent(this@SplashActivity, MainActivity::class.java))
 //                    }
                     }
                 }

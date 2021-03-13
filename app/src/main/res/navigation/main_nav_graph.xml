@@ -31,7 +31,11 @@
         app:exitAnim="@anim/fragment_open_exit"
         app:popEnterAnim="@anim/fragment_fade_enter"
         app:popExitAnim="@anim/fragment_fade_exit"
-        tools:layout="@layout/fragment_chat" />
+        tools:layout="@layout/fragment_chat">
+        <action
+            android:id="@+id/action_chatFragment_to_chatListFragment"
+            app:destination="@id/chatListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.ts.view.fragments.settings.SettingsFragment"
@@ -45,9 +49,18 @@
         android:id="@+id/profileFragment"
         android:name="com.example.ts.view.fragments.profile.ProfileFragment"
         android:label="ProfileFragment"
-        tools:layout="@layout/fragment_profile"
         app:enterAnim="@anim/fragment_open_enter"
         app:exitAnim="@anim/fragment_open_exit"
         app:popEnterAnim="@anim/fragment_fade_enter"
-        app:popExitAnim="@anim/fragment_fade_exit" />
+        app:popExitAnim="@anim/fragment_fade_exit"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/chatListFragment"
+        android:name="com.example.ts.view.fragments.chat.chatList.ChatListFragment"
+        android:label="ChatListFragment"
+        app:enterAnim="@anim/fragment_open_enter"
+        app:exitAnim="@anim/fragment_open_exit"
+        app:popEnterAnim="@anim/fragment_fade_enter"
+        app:popExitAnim="@anim/fragment_fade_exit"
+        tools:layout="@layout/fragment_chat_list" />
 </navigation>

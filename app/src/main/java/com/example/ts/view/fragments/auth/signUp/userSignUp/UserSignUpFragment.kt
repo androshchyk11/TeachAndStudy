@@ -73,7 +73,7 @@ class UserSignUpFragment : BaseFragment() {
                 if (areFieldsValid()) {
                     val bundle = Bundle()
                     bundle.putBoolean(CompanySignUpFragment.COMPANY_REGISTRATION_FLAG, false)
-                    findNavController().navigate(R.id.action_signUpFragment_to_verificationFragment, bundle)
+                    findNavController().navigate(R.id.action_signUpFragment_to_createPasswordFragment, bundle)
                 }
             }
         }

@@ -19,6 +19,9 @@ class FoldersAdapter @Inject constructor(@ApplicationContext context: Context) :
     var onFolderClickListener: OnFolderClickListener? = null
     override val layoutId = R.layout.item_chat_folder
     override fun bind(binding: ItemChatFolderBinding?, entity: TestEntity, position: Int) {
+        binding?.clickItem?.setOnClickListener {
+            onFolderClickListener?.folderClickListener() // todo add folderId and folderName when back appear
+        }
         binding?.executePendingBindings()
     }
 }

@@ -8,7 +8,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ts.R
 import com.example.ts.databinding.FragmentChatBinding
+import com.example.ts.interfaces.OnChatItemClickListener
 import com.example.ts.interfaces.OnFolderClickListener
+import com.example.ts.utils.showToast
+import com.example.ts.view.adapters.ChatsListAdapter
 import com.example.ts.view.adapters.FoldersAdapter
 import com.example.ts.view.fragments.abstraction.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -20,7 +23,7 @@ class ChatListFragment:BaseFragment() {
     private lateinit var binding: FragmentChatBinding
 
     @Inject
-    lateinit var foldersAdapter: FoldersAdapter
+    lateinit var chatListAdapter: ChatsListAdapter
 
 
     override fun onCreateView(
@@ -41,11 +44,11 @@ class ChatListFragment:BaseFragment() {
     }
 
     private fun setupFoldersRecyclerView() {
-        binding.foldersList.adapter = foldersAdapter
+        binding.foldersList.adapter = chatListAdapter
         binding.foldersList.layoutManager = LinearLayoutManager(requireContext())
 
-        foldersAdapter.onFolderClickListener = object: OnFolderClickListener {
-            override fun clickListener(id: String?) {
+        chatListAdapter.onChatItemClickListener = object: OnChatItemClickListener {
+            override fun chatItemClickListener(id: String?) {
 
             }
         }

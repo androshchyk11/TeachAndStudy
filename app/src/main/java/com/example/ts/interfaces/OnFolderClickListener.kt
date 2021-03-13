@@ -2,5 +2,5 @@ package com.example.ts.interfaces
 
 interface OnFolderClickListener {
 
-    fun clickListener(id: String? = null)
+    fun folderClickListener(id: String? = null,folderName:String?=null)
 }
